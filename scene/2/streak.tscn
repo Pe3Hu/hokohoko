@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://nv6422oa3qtn"]
+
+[ext_resource type="Script" path="res://scene/2/streak.gd" id="1_cv2se"]
+
+[node name="Streak" type="Line2D"]
+width = 2.0
+default_color = Color(0, 0, 0, 1)
+script = ExtResource("1_cv2se")

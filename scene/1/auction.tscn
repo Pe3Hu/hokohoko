@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfj3eb3xjog2"]
+
+[ext_resource type="Script" path="res://scene/1/auction.gd" id="1_y3hkg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8g10r"]
+
+[node name="Auction" type="PanelContainer" node_paths=PackedStringArray("rooms")]
+theme_override_styles/panel = SubResource("StyleBoxFlat_8g10r")
+script = ExtResource("1_y3hkg")
+rooms = NodePath("Rooms")
+
+[node name="Rooms" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 1

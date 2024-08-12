@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://uexqwdtsvih1"]
+
+[ext_resource type="Script" path="res://scene/2/price.gd" id="1_gvorh"]
+[ext_resource type="PackedScene" uid="uid://cthud2clocvtf" path="res://scene/2/section.tscn" id="2_1cmdt"]
+[ext_resource type="PackedScene" uid="uid://nv6422oa3qtn" path="res://scene/2/streak.tscn" id="2_vocap"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2r85n"]
+
+[node name="Price" type="PanelContainer" node_paths=PackedStringArray("sections", "limit_section", "profit_section", "streak")]
+custom_minimum_size = Vector2(5, 5)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2r85n")
+script = ExtResource("1_gvorh")
+sections = NodePath("Sections")
+limit_section = NodePath("Sections/Limit_Section")
+profit_section = NodePath("Sections/Profit_Section")
+streak = NodePath("Streak")
+
+[node name="Sections" type="Node2D" parent="."]
+
+[node name="Limit_Section" parent="Sections" node_paths=PackedStringArray("price") instance=ExtResource("2_1cmdt")]
+price = NodePath("../..")
+
+[node name="Profit_Section" parent="Sections" node_paths=PackedStringArray("price") instance=ExtResource("2_1cmdt")]
+price = NodePath("../..")
+
+[node name="Streak" parent="." node_paths=PackedStringArray("price") instance=ExtResource("2_vocap")]
+price = NodePath("..")

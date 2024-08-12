@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpq0g6jrlkuea"]
+
+[ext_resource type="Script" path="res://scene/0/world.gd" id="1_sbgiu"]
+[ext_resource type="PackedScene" uid="uid://bfj3eb3xjog2" path="res://scene/1/auction.tscn" id="2_q1qdt"]
+
+[node name="World" type="Node2D" node_paths=PackedStringArray("auction")]
+y_sort_enabled = true
+script = ExtResource("1_sbgiu")
+auction = NodePath("CanvasLayer/Auction")
+
+[node name="FPS" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+
+[node name="Auction" parent="CanvasLayer" node_paths=PackedStringArray("world") instance=ExtResource("2_q1qdt")]
+world = NodePath("../..")

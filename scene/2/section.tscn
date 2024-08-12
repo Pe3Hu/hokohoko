@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cthud2clocvtf"]
+
+[ext_resource type="Script" path="res://scene/2/section.gd" id="1_170jx"]
+
+[node name="Section" type="Polygon2D"]
+script = ExtResource("1_170jx")

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmdankdvmxc4f"]
+
+[ext_resource type="Script" path="res://scene/1/mediator.gd" id="1_meybu"]
+[ext_resource type="PackedScene" uid="uid://uexqwdtsvih1" path="res://scene/2/price.tscn" id="2_urb6f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kf5ad"]
+
+[node name="Mediator" type="PanelContainer" node_paths=PackedStringArray("price")]
+offset_right = 5.0
+offset_bottom = 5.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kf5ad")
+script = ExtResource("1_meybu")
+price = NodePath("Price")
+
+[node name="Price" parent="." node_paths=PackedStringArray("mediator") instance=ExtResource("2_urb6f")]
+layout_mode = 2
+mediator = NodePath("..")
